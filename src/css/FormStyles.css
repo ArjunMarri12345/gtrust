@@ -1,0 +1,337 @@
+/* ========================================= */
+/* 1. Page & Container Styles (GCSInternship.jsx / Volunteer.jsx) */
+/* ========================================= */
+
+.gcs-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.internship-intro {
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.internship-intro h1 {
+    color: #007bff; /* Primary brand color */
+    margin-bottom: 15px;
+    font-size: 2.5em;
+}
+
+.internship-intro p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.apply-now-button {
+    background-color: #28a745; /* Green for action */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    margin-top: 20px;
+}
+
+.apply-now-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* 2. Form General Styles (Form Container) */
+/* ========================================= */
+
+.internship-application-section {
+    padding: 30px 0;
+}
+
+.gcs-application-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.gcs-application-title {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.gcs-application-form h3 {
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-left: 5px solid #ffc107; /* Accent color */
+    padding-left: 10px;
+}
+
+/* ========================================= */
+/* 3. Input & Layout Styles */
+/* ========================================= */
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group.half-width {
+    flex: 1; /* Makes two fields occupy equal space in a row */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #495057;
+}
+
+.gcs-application-form input[type="text"],
+.gcs-application-form input[type="email"],
+.gcs-application-form input[type="tel"],
+.gcs-application-form select,
+.gcs-application-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    transition: border-color 0.3s;
+}
+
+.gcs-application-form input:focus,
+.gcs-application-form select:focus,
+.gcs-application-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.gcs-application-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ========================================= */
+/* 4. Radio/Checkbox Styles */
+/* ========================================= */
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    padding: 10px 0;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+/* Specific style for multi-column layouts like 'Areas of Interest' */
+.checkbox-group.multi-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.radio-group label,
+.checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+    /* Adjust size for better visibility */
+    transform: scale(1.1);
+}
+
+.agreement-checkbox label {
+    font-weight: normal;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 0.9em;
+    line-height: 1.4;
+    padding-top: 3px; /* Align text better with the checkbox */
+}
+
+/* ========================================= */
+/* 5. Language Input / Tag Styles */
+/* ========================================= */
+
+.language-tags-container {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-input-field {
+    flex-grow: 1;
+    border: none !important; /* Override default input border */
+    padding: 5px 0 !important;
+}
+
+.language-input-field:focus {
+    box-shadow: none !important;
+}
+
+.language-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e9f7fe;
+    color: #007bff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.remove-tag-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1;
+    padding: 0;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #6c757d;
+    font-size: 0.85em;
+}
+
+/* ========================================= */
+/* 6. File Upload Styles (Internship Form) */
+/* ========================================= */
+
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.custom-file-button {
+    background-color: #6c757d; /* Gray for file button */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-file-button:hover {
+    background-color: #5a6268;
+}
+
+.file-chosen-name {
+    margin-left: 10px;
+    color: #6c757d;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70%; /* Prevent name from stretching container too wide */
+}
+
+/* ========================================= */
+/* 7. Submission Button */
+/* ========================================= */
+
+.form-submit-group {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.submit-button:hover:not([disabled]) {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.submit-button[disabled] {
+    background-color: #a0c3e6;
+    cursor: not-allowed;
+}
+
+
+/* ========================================= */
+/* 8. Media Queries for Responsiveness */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .internship-intro {
+        padding: 25px;
+    }
+    
+    .gcs-application-form {
+        padding: 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-group.half-width {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .radio-group,
+    .checkbox-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .checkbox-group.multi-column {
+        grid-template-columns: 1fr;
+    }
+}

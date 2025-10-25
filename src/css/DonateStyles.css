@@ -1,0 +1,366 @@
+/* src/css/OurPledge.css */
+
+/* Note: This file relies on CSS variables defined in your Home.css file */
+
+/* --- 1. OUR PLEDGE PAGE STYLING (Green Banner) --- */
+
+.pledge-section {
+    background-color: var(--pledge-green); 
+    color: var(--white); 
+    padding: 80px 5%; 
+    text-align: center; 
+}
+
+.pledge-heading {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--white); 
+}
+
+.pledge-subtext {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: var(--white);
+}
+
+.pledge-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.pledge-icon {
+    width: 60px; 
+    height: 60px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    background-color: var(--white);
+    display: block;
+}
+
+.pledge-button-container {
+    padding-top: 20px;
+}
+
+.pledge-button {
+    display: inline-block; 
+    background-color: var(--pledge-yellow); 
+    color: var(--text-color); 
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.pledge-button:hover {
+    background-color: #f39c12;
+}
+
+/* --- 2. COMMITMENT AND DISTRICT FOCUS STYLING --- */
+
+.commitment-section {
+    background-color: var(--light-bg);
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.commitment-intro {
+    margin-bottom: 50px;
+}
+
+.commitment-card {
+    background-color: var(--white);
+    border: 1px solid var(--light-blue);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.commitment-card .card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.commitment-card .card-detail {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Specific styling for the Goal/Principle highlight bar */
+.commitment-card .card-goal,
+.commitment-card .card-principle {
+    background-color: var(--header-top-bg); 
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+/* Margadarsi Role Box (Special styling for the larger box) */
+.margadarsi-role {
+    margin-top: 40px;
+    padding: 35px;
+}
+.margadarsi-role .margadarsi-title {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+.margadarsi-role .margadarsi-content {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* --- 3. CERTIFICATES, GOALS, AND PILLARS STYLING --- */
+
+.certificate-section {
+    padding-top: 80px;
+    background-color: var(--white);
+}
+
+.certificate-intro {
+    margin-bottom: 40px;
+}
+
+.section-heading {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.certificate-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.certificate-card {
+    flex-basis: 400px;
+    background-color: var(--white);
+    border-radius: 10px;
+    border: 1px solid #ddd; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden; 
+}
+
+/* Custom Box with Background Image and Yellow Bars */
+.cert-content-box {
+    position: relative;
+    padding: 20px 30px;
+    min-height: 250px; 
+    background-color: #f7f7f7; 
+    
+    /* STYLING FOR THE BACKGROUND SEAL/LOGO */
+    /* *** NOTE: REPLACE WITH YOUR ACTUAL IMAGE PATH *** */
+    /* background-image: url('../assets/your-government-seal-placeholder.png');  */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80%;
+    /* This color makes the seal transparent/grayed out */
+    background-blend-mode: color; 
+}
+
+/* Vertical Yellow Bars (Using Pseudo-elements) */
+.cert-content-box::before,
+.cert-content-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px; 
+    background-color: var(--pledge-yellow); /* Yellow color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+.cert-content-box::before { left: 0; }
+.cert-content-box::after { right: 0; }
+
+/* Content List Styling */
+.cert-content-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+}
+.cert-content-box li {
+    margin-bottom: 10px;
+    /* Custom bullet point for the list items */
+    list-style-type: disc; 
+    margin-left: 1.2em;
+}
+
+/* Footer Section (Titles and Buttons) */
+.cert-title {
+    font-size: 20px;
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin: 20px 30px 5px;
+}
+
+.cert-description {
+    font-size: 15px;
+    color: var(--text-color);
+    margin: 0 30px 10px;
+}
+
+.cert-info-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 20px;
+}
+
+.cert-date {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.cert-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cert-link {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-link {
+    background-color: #f0f0f0; 
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.view-link:hover {
+    background-color: #e0e0e0;
+}
+
+.download-link {
+    background-color: var(--pledge-green); 
+    color: var(--white);
+    border: 1px solid var(--pledge-green);
+}
+
+.download-link:hover {
+    background-color: #219653; 
+}
+
+/* Verification Info */
+.verification-info {
+    font-size: 15px;
+    color: var(--text-color);
+    padding: 20px 0;
+    border-top: 1px dashed var(--light-blue);
+    margin-bottom: 60px;
+    text-align: center;
+}
+.verification-info p { margin: 5px 0; }
+.verification-info strong { font-weight: 700; }
+
+/* Impact Goals Grid */
+.goals-heading { margin-top: 0; }
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.goal-card {
+    background-color: var(--light-bg);
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.goal-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--secondary-pink);
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.goal-label {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Three Pillars of Support Grid */
+.pillars-heading { margin-bottom: 40px; }
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.pillar-card {
+    padding: 30px;
+    background-color: var(--light-bg);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.pillar-icon {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.pillar-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.pillar-description {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .certificate-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .certificate-card {
+        flex-basis: auto;
+    }
+    .goals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

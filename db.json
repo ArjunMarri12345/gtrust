@@ -1,0 +1,50 @@
+{
+  "applications": [
+    {
+      "id": "1678886400000",
+      "firstName": "Sample",
+      "email": "sample@gcs.org",
+      "submissionTime": "2025-10-21T11:00:00Z"
+    },
+    {
+      "id": "b894",
+      "firstName": "Arjun",
+      "lastName": "Marri",
+      "address": "Gundapureddypalem village,kandivalsa post,pusapatirega mandal,vizianagaram District",
+      "city": "vizianagaram",
+      "state": "Andhra Pradesh",
+      "zipCode": "535204",
+      "phone": "09603328658",
+      "email": "marriarjun12345@gmail.com",
+      "languages": [],
+      "computerKnowledge": "Basic",
+      "educationLevel": "Passed 12th",
+      "resumeFile": {
+        "name": "2022-09-26 (1).png",
+        "size": 195994,
+        "type": "image/png"
+      },
+      "submissionTime": "2025-10-21T15:08:20.058Z"
+    },
+    {
+      "id": "a7ea",
+      "firstName": "Arjun",
+      "lastName": "Marri",
+      "address": "Gundapureddypalem village,kandivalsa post,pusapatirega mandal,vizianagaram District",
+      "city": "vizianagaram",
+      "state": "Andhra Pradesh",
+      "zipCode": "535204",
+      "phone": "09603328658",
+      "email": "marriarjun12345@gmail.com",
+      "languages": [],
+      "computerKnowledge": "Basic",
+      "educationLevel": "B.Tech",
+      "resumeFile": {
+        "name": "Resume (2) (2).pdf",
+        "size": 40526,
+        "type": "application/pdf"
+      },
+      "submissionTime": "2025-10-22T04:22:02.611Z"
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+/* Re-using gcs-page from FormStyles.css, but adding specific Contact styles */
+
+.contact-page {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.contact-page .page-title {
+    text-align: center;
+    color: #007bff;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+/* --- Content Wrapper (Two Columns) --- */
+.contact-content-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.contact-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-section .gcs-application-form {
+    padding: 30px;
+}
+
+/* Tweak form styles for a cleaner look */
+.compact-form .form-submit-group {
+    margin-top: 20px;
+}
+.contact-form-title {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- Details Section Styling --- */
+.details-section {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.details-section h3 {
+    color: #007bff;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-detail .icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: #28a745; /* Green accent */
+    line-height: 1.2;
+}
+
+.contact-detail p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- Updates Box / Subscription --- */
+.updates-box {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+}
+
+.updates-box h4 {
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.email-subscribe {
+    display: flex;
+    gap: 10px;
+}
+
+.email-subscribe input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.email-subscribe button {
+    background-color: #ffc107; /* Yellow accent */
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.email-subscribe button:hover {
+    background-color: #e0a800;
+}
+
+
+/* ========================================= */
+/* --- Contact Footer Styles --- */
+/* ========================================= */
+
+.contact-footer {
+    background-color: #343a40; /* Dark background */
+    color: white;
+    padding: 40px 0 20px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    color: #007bff; /* Blue accent */
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-col p {
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+}
+
+.footer-col a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #495057;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+
+/* ========================================= */
+/* --- Responsiveness --- */
+/* ========================================= */
+
+@media (max-width: 992px) {
+    .contact-content-wrapper {
+        flex-direction: column;
+    }
+    .footer-columns {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    .email-subscribe {
+        flex-direction: column;
+    }
+    .email-subscribe button {
+        width: 100%;
+    }
+}
+.map-embed-container {
+    margin-bottom: 25px; /* Adds spacing between map and contact form */
+    padding-top: 0;
+}
+
+.map-embed-container h3 {
+    color: #495057;
+    margin-bottom: 15px;
+    font-size: 1.5em; /* Match form title size */
+    text-align: center;
+}
