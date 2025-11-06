@@ -39,7 +39,6 @@ body {
   
   /* Pushes the LEFT group (nav) to the far left and RIGHT button (donate) to the far right */
   justify-content: space-between; 
-  
   align-items: center;
   padding: 10px 5%;
   z-index: 1000;
