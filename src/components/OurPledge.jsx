@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/OurPledge.css';
 
 // --- ICON IMPORTS ---
@@ -11,6 +12,8 @@ import vizagCertBG from '../assets/P4_Visakhapatnam_certificate_page-0001.jpg';
 import anakapalliCertBG from '../assets/P4_Anakapalli_certificate-1.jpg';
 
 const OurPledge = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="our-pledge-page">
 
@@ -22,12 +25,10 @@ const OurPledge = () => {
             <img src={icon2} alt="Pledge Icon 2" className="pledge-icon" />
             <img src={icon3} alt="Pledge Icon 3" className="pledge-icon" />
           </div>
-
           <h1 className="pledge-heading">Our Zero Poverty P4 Pledge</h1>
           <p className="pledge-subtext">
             Committed to Creating a Poverty-Free Andhra Pradesh
           </p>
-
           <div className="pledge-button-container">
             <button className="pledge-button">
               🏛️ Official Government Partner | Bangaru Kutumbalu Program
@@ -45,7 +46,6 @@ const OurPledge = () => {
               As a registered Margadarsi under the Bangaru Kutumbalu program,GCS has pledged to support families across two key districts in Andhra Pradesh.
             </p>
           </div>
-
           <div className="commitment-grid">
             <div className="commitment-card">
               <h3 className="card-title">📍 Visakhapatnam Families</h3>
@@ -54,7 +54,6 @@ const OurPledge = () => {
                 Goal: Financial stability and self-reliance through targeted mentorship.
               </span>
             </div>
-
             <div className="commitment-card">
               <h3 className="card-title">🧑‍🤝‍🧑 Anakapalli Families</h3>
               <p>Supporting 10 families in Anakapalli / Madugula / Rural areas.</p>
@@ -62,7 +61,6 @@ const OurPledge = () => {
                 Goal: Rural development and poverty alleviation via community programs.
               </span>
             </div>
-
             <div className="commitment-card">
               <h3 className="card-title">💚 Our Approach</h3>
               <p>Providing resources, opportunities, and mentorship based on each family's needs.</p>
@@ -70,7 +68,6 @@ const OurPledge = () => {
                 Principle: Empathy, respect, and privacy preservation.
               </span>
             </div>
-
             <div className="commitment-card margadarsi-role">
               <h3 className="card-title">🌟 Our Role as Margadarsi (Guide)</h3>
               <p>
@@ -89,19 +86,13 @@ const OurPledge = () => {
           <p className="center-content mission-text max-width-p certificate-intro">
             Download and view our official Zero Poverty P4 pledge certificates
           </p>
-
-          {/* CERTIFICATE GRID (Centered Two-Column) */}
           <div className="certificate-grid">
-
             {/* Visakhapatnam Certificate */}
             <div className="certificate-card vizag-cert-card">
-                {/* Background Image Container */}
                 <div 
                     className="certificate-bg-container"
                     style={{ backgroundImage: `url(${vizagCertBG})` }}
                 ></div>
-                
-                {/* Foreground Content */}
                 <div className="certificate-details">
                     <h3 className="cert-title">Visakhapatnam Area Commitment</h3>
                     <p className="cert-description">
@@ -126,16 +117,12 @@ const OurPledge = () => {
                     </div>
                 </div>
             </div>
-
             {/* Anakapalli Certificate */}
             <div className="certificate-card anakapalli-cert-card">
-                {/* Background Image Container */}
                 <div 
                     className="certificate-bg-container"
                     style={{ backgroundImage: `url(${anakapalliCertBG})` }}
                 ></div>
-
-                {/* Foreground Content */}
                 <div className="certificate-details">
                     <h3 className="cert-title">Anakapalli Area Commitment</h3>
                     <p className="cert-description">
@@ -161,7 +148,7 @@ const OurPledge = () => {
                 </div>
             </div>
           </div>
-{/* IMPACT GOALS (Centered Vertical Stack) */}
+          {/* IMPACT GOALS (Centered Vertical Stack) */}
           <h2 className="section-heading goals-heading">Our Impact Goals</h2>
           <div className="goals-grid">
             <div className="goal-card"><div className="goal-number">20</div><div className="goal-label">Families Supported</div></div>
@@ -169,14 +156,11 @@ const OurPledge = () => {
             <div className="goal-card"><div className="goal-number">3</div><div className="goal-label">Focus Areas</div></div>
             <div className="goal-card"><div className="goal-number">18</div><div className="goal-label">Years Experience</div></div>
           </div>
-          
           {/* ⭐️ NEW: THREE PILLARS OF SUPPORT SECTION ⭐️ */}
           <h2 className="section-heading pillars-heading">Our Three Pillars of Support</h2>
           <div className="pillars-grid">
-            
             <div className="pillar-card">
                 <div className="pillar-icon">
-                    {/* Placeholder for Financial Stability icon */}
                     <span role="img" aria-label="Money Bag">💰</span>
                 </div>
                 <div className="pillar-content">
@@ -186,10 +170,8 @@ const OurPledge = () => {
                     </p>
                 </div>
             </div>
-
             <div className="pillar-card">
                 <div className="pillar-icon">
-                    {/* Placeholder for Targeted Resources icon */}
                     <span role="img" aria-label="Target">🎯</span>
                 </div>
                 <div className="pillar-content">
@@ -199,10 +181,8 @@ const OurPledge = () => {
                     </p>
                 </div>
             </div>
-
             <div className="pillar-card">
                 <div className="pillar-icon">
-                    {/* Placeholder for Respectful Approach icon */}
                     <span role="img" aria-label="Handshake">🤝</span>
                 </div>
                 <div className="pillar-content">
@@ -212,12 +192,40 @@ const OurPledge = () => {
                     </p>
                 </div>
             </div>
-
-          </div> {/* end pillars-grid */}
-
-        </div> {/* end page-content */}
+          </div>
+        </div>
       </section>
+
+      {/* 4️⃣ JOIN OUR MISSION SECTION */}
+      <section className="page-section mission-join-section">
+        <div className="page-content center-content">
+          <h2 className="mission-join-heading">
+            Join Our Mission
+          </h2>
+          <p className="mission-join-text">
+            Help us fulfill our pledge to support 20 families across Andhra Pradesh.<br />
+            Whether you volunteer your time or contribute financially, your support makes a real difference.
+          </p>
+          <div className="mission-cta-button-container">
+            <button className="mission-volunteer-btn" onClick={() => navigate('/volunteer')}>
+              🌼 Become a Volunteer <span className="mission-arrow">&rarr;</span>
+            </button>
+            <button className="mission-donate-btn" onClick={() => navigate('/donate')}>
+              <span role="img" aria-label="donate">🥰</span> Donate Now <span className="mission-arrow">&rarr;</span>
+            </button>
+          </div>
+          <div className="mission-contact-info">
+            <div className="mission-contact-label">Questions about our pledge? We're here to help!</div>
+            <div className="mission-contact-details">
+              <span className="mission-contact-email">✉️ support@ganeshsociety.org</span><br />
+              <span className="mission-contact-phone">📞 +91 89127494419</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };
+
 export default OurPledge;

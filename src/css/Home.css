@@ -1,176 +1,519 @@
-/* src/css/Home.css - Base, Header, Utilities, and Hero */
-
-/* --- Variables --- */
 :root {
+  /* Color Variables */
   --primary-blue: #3f68a7;
-  --secondary-pink: #c94c7c; 
-  --text-color: #444;
+  --secondary-pink: #c94c7c;
+  --navy-blue: #2328ff;
+  --cta-pink: #ff6796;
+  --cta-red: #dc143c;
+  --cta-green: #27ae60;
+  --cta-gold: #ffd700;
+  --text-color: #444444;
   --white: #ffffff;
   --light-blue: #cce7ff;
+  --gradient-blue-light: #a8d8ff;
+  --gradient-blue-mid: #689ae8;
+  --gradient-blue-dark: #2b4a7d;
   --light-bg: #f8fbfd;
   --header-top-bg: #e0f8e0;
-  --donate-button-color: #c94c7c;
-  --pledge-green: #27ae60;
-  --pledge-yellow: #f1c40f;
+  --shadow-elevation: rgba(0, 0, 0, 0.15);
 }
 
-/* Base Reset */
+/* Global Base Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--white);
-    color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--white);
+  color: var(--text-color);
 }
 
-/* ------------------------------------------- */
-/* --- 1. HEADER STYLING (MATCHES IMAGE) --- */
-/* ------------------------------------------- */
+/* Header & Navigation */
 .gcs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 5%;
+  height: 70px;
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  
-  /* Set the light green background color */
-  background-color: var(--header-top-bg); 
-  
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  display: flex;
-  
-  /* Pushes the LEFT group (nav) to the far left and RIGHT button (donate) to the far right */
-  justify-content: space-between; 
-  align-items: center;
-  padding: 10px 5%;
   z-index: 1000;
-  box-sizing: border-box; 
-}
-
-/* Left Grouping: Logo, Toggle, and ALL Nav Links */
-.gcs-header .header-left { 
-    display: flex; 
-    align-items: center; 
-    gap: 30px; 
-}
-
-.gcs-header .logo { 
-    font-size: 24px; 
-    font-weight: 800; 
-    color: var(--primary-blue); 
-}
-
-/* Theme Toggle Placeholder styles */
-.gcs-header .theme-toggle {
-    width: 40px; 
-    height: 20px;
-    background-color: #ccc; 
-    border-radius: 10px;
-    margin-right: 10px; 
-}
-
-/* Navigation list spacing */
-.gcs-header .header-nav ul { 
-  list-style: none; 
-  display: flex; 
-  margin: 0; /* Anchor to the left */
-  padding: 0; /* Anchor to the left */
-  gap: 20px; 
-}
-
-.gcs-header .header-nav li { margin-left: 0; } 
-.gcs-header .nav-link { 
-    text-decoration: none; 
-    color: var(--text-color); 
-    font-weight: 500; 
-    padding: 5px 0; 
-    transition: color 0.3s, border-bottom 0.3s; 
-}
-.gcs-header .nav-link:hover { color: var(--primary-blue); }
-.gcs-header .active-link { color: var(--secondary-pink); border-bottom: 2px solid var(--secondary-pink); }
-
-/* Donate Button Styling (Right-Aligned) */
-.donate-button {
-    background-color: var(--donate-button-color); 
-    color: var(--white);
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-.donate-button:hover {
-    opacity: 0.9;
-}
-
-
-/* ---------------------------------------------------- */
-/* --- 2. BASE/UTILITY CLASSES (Shared across pages) --- */
-/* ---------------------------------------------------- */
-.who-we-are-page, .gcs-hero-container, .our-pledge-page {
-     padding-top: 60px;
-}
-
-.page-content { max-width: 1200px; margin: 0 auto; }
-.page-section { padding: 60px 5%; }
-.primary-section { background-color: var(--white); }
-.center-content { text-align: center; }
-.max-width-p { max-width: 900px; margin-left: auto; margin-right: auto; }
-.main-heading { font-size: 40px; font-weight: 800; color: var(--primary-blue); margin-bottom: 30px; }
-.mission-text { font-size: 18px; line-height: 1.7; color: var(--text-color); }
-
-
-/* ---------------------------------------------------- */
-/* --- 3. HOME HERO STYLING (For Home.jsx) --- */
-/* ---------------------------------------------------- */
-.gcs-hero-container {
-  padding: 40px;
   box-sizing: border-box;
-  background-color: var(--light-blue); 
+}
+
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.header-logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Links – using pseudo-element for underline */
+.nav-link,
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.active-link {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  text-decoration: none !important;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* Underline using ::after pseudo-element */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-blue);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  color: var(--primary-blue);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link:active::after {
+  width: 100%;
+}
+
+.active-link {
+  color: var(--secondary-pink);
+}
+
+.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--secondary-pink);
+}
+
+/* Donate Button */
+.donate-button {
+  background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-pink));
+  color: var(--white);
+  padding: 12px 32px;
+  border: none;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(63, 104, 167, 0.1);
+  transition: background 0.2s, opacity 0.3s, transform 0.2s;
+}
+
+.donate-button:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  background: linear-gradient(to bottom, var(--navy-blue), var(--cta-pink));
+}
+
+/* Hero Section */
+.gcs-hero-container {
+  position: relative;
+  padding: 40px;
+  background: var(--light-blue) url('../../public/background.png') center/cover no-repeat;
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gcs-hero-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.gcs-hero-container > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
   display: flex;
-  justify-content: space-between; 
-  align-items: center;  
-  gap: 40px; 
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 }
 
 .text-section {
   flex: 1;
-  max-width: 50%; 
+  max-width: 50%;
   color: var(--text-color);
-  padding: 0;
 }
 
-.society-name {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: var(--secondary-pink); 
-  font-weight: 600;
+.main-heading {
+  font-size: 40px;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--gradient-blue-light) 10%, var(--primary-blue) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 16px rgba(64, 120, 167, 0.08);
 }
 
-/* Image section for two images on the right side */
 .image-section {
-  flex: 1; 
-  display: flex; 
-  justify-content: flex-end; 
-  gap: 20px; 
-  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
 }
 
-/* Styles for both hero images to share the space */
 .hero-image {
-  max-width: 48%; 
+  max-width: 48%;
   height: auto;
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Government Partnership Section */
+.partnership-section-wrapper {
+  background-color: var(--cta-green);
+  color: var(--white);
+  text-align: center;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 1000px;
+  margin: 60px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
+.partnership-section-wrapper:hover {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.partnership-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.partnership-logo-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--white);
+  padding: 3px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partnership-logo-icon:hover {
+  transform: scale(1.1);
+}
+
+.official-partner-badge {
+  background-color: var(--cta-gold);
+  color: #333;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.partnership-heading {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.handshake-icon {
+  color: var(--cta-gold);
+  font-size: 1.8rem;
+}
+
+.partnership-subheading {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--light-bg);
+  margin: 0 0 25px;
+}
+
+.partnership-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--white);
+  margin-bottom: 40px;
+}
+
+.partnership-stats {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.stat-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 5px;
+  color: var(--light-bg);
+}
+
+.certificate-buttons-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.certificate-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 25px;
+  background-color: #4caf50;
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.certificate-button:hover {
+  background-color: #388e3c;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.download-icon {
+  font-size: 1.2rem;
+}
+
+.partnership-action-buttons-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s, transform 0.2s;
+  width: 100%;
+}
+
+.pledge-action-button {
+  background-color: var(--cta-gold);
+  color: var(--text-color);
+}
+
+.pledge-action-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.volunteer-action-button {
+  background-color: #388e3c;
+  color: var(--white);
+}
+
+.volunteer-action-button:hover {
+  background-color: #2e7d32;
+  transform: translateY(-2px);
+}
+
+.action-icon {
+  font-size: 1.3rem;
+}
+
+/* Certificate Modal */
+.certificate-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.certificate-modal-content {
+  background: var(--white);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  max-width: 95%;
+  max-height: 95%;
+  overflow: auto;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--cta-red);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2010;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-modal-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
+}
+
+/* Media Queries */
 @media (max-width: 900px) {
-  .hero-content { flex-direction: column; align-items: center; }
-  .text-section, .image-section { max-width: 100%; width: 100%; }
-  .image-section { justify-content: center; margin-top: 20px; }
+  .gcs-header {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 3%;
+  }
+
+  .header-logo-container {
+    font-size: 18px;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .header-right {
+    margin-top: 10px;
+  }
+
+  .gcs-hero-container {
+    padding: 10px 5%;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .text-section,
+  .image-section {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .image-section {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .hero-image {
+    max-width: 90%;
+  }
+
+  .donate-button {
+    font-size: 1.08rem;
+    border-radius: 32px;
+  }
+
+  .partnership-stats {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .certificate-buttons-group,
+  .partnership-action-buttons-group {
+    max-width: 90%;
+  }
+
+  .partnership-section-wrapper {
+    max-width: none;
+    margin: 40px 5%;
+    padding: 30px 5%;
+  }
 }

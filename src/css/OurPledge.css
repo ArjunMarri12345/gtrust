@@ -1,11 +1,8 @@
-/* ==================================== */
-/* 1. General Page Structure & Utils    */
-/* ==================================== */
-
 .our-pledge-page {
     font-family: Arial, sans-serif;
     color: #333;
-    line-height: 1.2; 
+    line-height: 1.2;
+    background-color: #04750e;
 }
 
 .page-section {
@@ -31,13 +28,13 @@
 .main-heading {
     font-size: 2.5em;
     color: #1a1a1a;
-    margin-bottom: 25px; 
+    margin-bottom: 25px;
 }
 
 .mission-text {
     font-size: 1.1em;
     color: #555;
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
 }
 
 .section-heading {
@@ -47,439 +44,106 @@
     text-align: center;
 }
 
-/* ==================================== */
-/* 2. Pledge Banner Section (Green & Yellow) */
-/* ==================================== */
+/* Existing styles omitted for brevity; keep your styles above here */
 
-.pledge-section {
-    background-color: #4CAF50; /* Green */
+/* NEW: Join Our Mission Section */
+.mission-join-section {
+    background: linear-gradient(120deg, #169949 0%, #248a53 100%);
     color: white;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding: 70px 0 50px 0;
+    margin-top: 48px;
 }
 
-.pledge-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 25px;
+.mission-join-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 18px;
 }
 
-.pledge-icon {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-}
-
-.pledge-heading {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: white;
-}
-
-.pledge-subtext {
-    font-size: 1.4em;
-    font-weight: 300;
-    margin-bottom: 30px;
-    color: #ddd;
-}
-
-.pledge-button-container {
-    margin-top: 30px;
-}
-
-.pledge-button {
-    background-color: #ffc107; /* Yellow/Gold Accent */
-    color: #1c3a5e;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: default;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* ==================================== */
-/* 3. Commitment Section (Vertical Cards) */
-/* ==================================== */
-
-.commitment-section {
-    background-color: #f8f8f8; 
-}
-
-.commitment-grid {
-    display: grid;
-    grid-template-columns: 1fr; 
-    max-width: 800px; 
-    margin: 40px auto 0 auto;
-    gap: 25px;
-}
-
-.commitment-card {
-    background: #fff; 
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.commitment-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.card-title {
-    font-size: 1.4em; 
-    color: #1c3a5e; 
-    margin-bottom: 15px; 
-}
-
-.commitment-card p {
-    font-size: 1em; 
-    color: #555;
-    margin-bottom: 20px; 
-    line-height: 1.6;
-}
-
-.goal-text {
-    display: block;
-    font-style: italic;
-    color: #777;
-    font-size: 0.95em; 
-    border-top: 1px dashed #ddd;
-    padding: 15px 0 0 0; 
-    margin-top: 20px; 
-}
-
-.margadarsi-role {
-    background-color: #e3f3ff; /* Light blue background */
-    border: 1px solid #cceeff;
-}
-
-.margadarsi-role .card-title {
-    color: #1c3a5e; 
-}
-
-/* ==================================== */
-/* 4. Certificates Section (Buttons in Middle & Visibility Fix) */
-/* ==================================== */
-
-.certificate-section {
-    background-color: #f7fff7; 
-    padding: 60px 0;
-}
-
-.certificate-intro {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.certificate-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 60px;
-    
-    max-width: 1100px; 
-    margin-left: auto !important;
-    margin-right: auto !important; 
-    padding: 0 15px;
-}
-
-.certificate-card {
-    position: relative; 
-    overflow: hidden; 
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 0; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    text-align: left; 
-    min-height: 250px; 
-    border-radius: 10px; 
-}
-
-/* --- Certificate Background Styling --- */
-.certificate-bg-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.15;
-    transform: rotate(-3deg) scale(1.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.certificate-card:hover .certificate-bg-container {
-    transform: rotate(-1deg) scale(1.05);
-}
-
-.certificate-details {
-    position: relative; 
-    /* CRITICAL FIX: Max Z-INDEX on details container */
-    z-index: 99999; 
-    padding: 25px; 
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    /* CHANGE: Center content vertically (pushes all content block to the middle) */
-    justify-content: center; 
-    /* CHANGE: Center content horizontally */
-    align-items: center; 
-    text-align: center;
-}
-
-/* --- Certificate Text Styles (Adjusted for Center Alignment) --- */
-
-.cert-title {
-    font-size: 1.2em;
-    color: #34495e;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.cert-description {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.cert-date {
-    font-size: 0.85em;
-    color: #888;
-    /* Added padding/margin to space text from buttons */
-    margin-bottom: 25px; 
-    text-align: center;
-}
-
-.cert-actions {
-    display: flex;
-    gap: 10px;
-    /* CHANGE: Removed margin-top: auto to allow vertical centering */
-    margin-top: 0; 
-    /* CHANGE: Center buttons horizontally */
-    justify-content: center; 
-    width: 100%;
-    padding-top: 15px; 
-    /* CRITICAL FIX 2: Set position and max z-index explicitly on the buttons container */
-    position: relative; 
-    z-index: 999999;
-}
-
-.cert-link {
-    display: inline-block;
-    padding: 8px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    font-weight: bold;
-    transition: background-color 0.2s, color 0.2s;
-    /* CRITICAL FIX 3: Ensure links themselves have relative position and max z-index */
-    position: relative;
-    z-index: 999999;
-}
-
-.view-link {
-    background-color: #f0f0f0; 
-    color: #555;
-    border: 1px solid #ccc;
-}
-
-.view-link:hover {
-    background-color: #ddd;
-}
-
-.download-link {
-    background-color: #4CAF50; 
-    color: white;
-    border: none;
-}
-
-.download-link:hover {
-    background-color: #45a049;
-}
-
-/* --- Impact Goals (Responsive Grid) --- */
-
-.goals-heading {
-    margin-top: 0;
-    color: #1c3a5e;
-}
-
-.goals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-    justify-content: center;
-    gap: 15px;
-    padding: 20px 0;
-    max-width: 900px; 
-    margin: 0 auto; 
-}
-
-.goal-card {
-    text-align: center;
-    width: 100%; 
-    min-width: 0; 
-    padding: 20px 15px; 
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e0e0e0;
-}
-
-.goal-number {
-    font-size: 2.5em; 
-    font-weight: bold;
-    color: #4CAF50; 
-    line-height: 1;
-    margin-bottom: 5px;
-}
-
-.goal-label {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 5px;
-    text-transform: capitalize;
-}
-
-/* ==================================== */
-/* 5. Three Pillars of Support Styles */
-/* ==================================== */
-
-.pillars-heading {
-    margin-top: 60px;
-    margin-bottom: 30px;
-    color: #1a1a1a;
-}
-
-.pillars-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px; 
-    max-width: 900px; 
-    margin: 0 auto 60px auto; 
-    padding: 0 20px;
-}
-
-.pillar-card {
-    display: flex;
-    align-items: flex-start;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid #d4eeda; 
-    border-left: none;
-    border-right: none;
-}
-
-.pillar-icon {
-    font-size: 2em;
-    margin-right: 25px;
-    background-color: #e6ffe6;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border: 3px solid #ffc107; 
-}
-
-.pillar-content {
-    flex-grow: 1;
-}
-
-.pillar-title {
-    font-size: 1.25em;
-    color: #1c3a5e; 
-    margin-bottom: 5px;
-}
-
-.pillar-description {
-    font-size: 0.95em;
-    color: #555;
+.mission-join-text {
+    font-size: 1.35rem;
+    margin-bottom: 32px;
     line-height: 1.4;
 }
 
-/* ==================================== */
-/* 6. Responsiveness / Mobile Adjustments */
-/* ==================================== */
+.mission-cta-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: center;
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto 40px auto;
+}
 
-@media (max-width: 768px) {
-    .pledge-heading {
-        font-size: 2.2em;
-    }
+.mission-volunteer-btn {
+    background-color: #ffd600; /* Gold Yellow */
+    color: #1a4c1b; /* Dark Green */
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 1.16rem;
+    padding: 19px 0;
+    width: 100%;
+    max-width: 540px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(60, 160, 60, 0.06);
+    transition: background-color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .pledge-subtext {
-        font-size: 1.1em;
-    }
+.mission-volunteer-btn:hover {
+    background-color: #e6c400;
+}
 
-    .pledge-icons {
-        gap: 15px;
-    }
+.mission-donate-btn {
+    background-color: rgba(255, 255, 255, 0.11);
+    color: white;
+    border: 2px solid #b8ffcb;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.13rem;
+    padding: 19px 0;
+    width: 100%;
+    max-width: 540px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    transition: background-color 0.2s ease;
+}
 
-    .pledge-icon {
-        width: 60px;
-        height: 60px;
-    }
+.mission-donate-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
 
-    .commitment-grid {
-        max-width: 100%; 
-        padding: 0 20px;
-    }
+.mission-arrow {
+    margin-left: 12px;
+    font-weight: 700;
+}
 
-    .certificate-grid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-        padding: 0 20px;
-    }
-    
-    /* Mobile adjustments for Goals */
-    .goals-grid {
-        grid-template-columns: 1fr 1fr;
-        max-width: 98%; 
-        width: 100%;
-        padding: 0 10px; 
-    }
-    
-    .goal-card {
-        padding: 20px 10px; 
-    }
-    
-    .goal-label {
-        font-size: 0.8em;
-    }
-    
-    /* Mobile adjustments for Pillars */
-    .pillars-grid {
-        padding: 0 10px;
-    }
-    
-    .pillar-card {
-        padding: 15px 20px;
-    }
-    
-    .pillar-icon {
-        font-size: 1.5em;
-        width: 40px;
-        height: 40px;
-        margin-right: 15px;
-        border-width: 2px;
-    }
+.mission-contact-info {
+    max-width: 540px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 24px;
+    color: #ffefa5;
+    font-size: 1.12rem;
+    line-height: 1.4;
+}
 
-    .pillar-title {
-        font-size: 1.1em;
-    }
-    
-    .pillar-description {
-        font-size: 0.9em;
-    }
+.mission-contact-label {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    color: white;
+}
+
+.mission-contact-email,
+.mission-contact-phone {
+    display: inline-block;
+    margin-top: 4px;
+    word-break: break-word;
 }
